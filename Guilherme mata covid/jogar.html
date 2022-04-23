@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>mata covid</title>		
+		<link rel="stylesheet"  href="estilo.css" />
+		<script src="jogo.js"></script>
+		
+	</head>
+<body  onclick="showCoords(event) " onresize ="ajustaTamanhoPalcoJogo()" >
+
+	<audio id="myAudioerra">
+		<source src="som/erraRaquete1.ogg" type="audio/ogg">
+		<source src="som/erraRaquete1.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+  <!---------audio quando mata--->
+	<audio id="myAudio">
+		<source src="som/mataMosca.ogg" type="audio/ogg">
+		<source src="som/mataMosca.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+		<audio id="myAudioVidas">
+		<source src="som/caimascara.ogg" type="audio/ogg">
+		<source src="som/caimascara.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+
+	<script>
+
+		var x = document.getElementById("myAudio"); 
+
+		function playAudio() { 
+			x.preload;
+			x.volume = 1;
+		  x.play(); 
+	} 
+			var y = document.getElementById("myAudioVidas"); 
+
+		function playAudioVidas() { 
+			y.preload;
+			y.volume = 0.7;
+		  y.play(); 
+	}
+	</script>
+
+	<div class="painel">
+		<div class="vida">
+			<img id="v1" src="imagens/mascara.png" width="45" />
+			<img id="v2" src="imagens/mascara.png" width="45" />
+			<img id="v3" src="imagens/mascara.png" width="45" />
+			
+		</div>
+		<div class="cronometro">
+			Tempo Restante: <span id="cronometro"></span>	
+		</div>		
+	</div>
+
+	<script>
+		document.getElementById('cronometro').innerHTML = tempo
+		posicaoRandomica() 
+		var cria_mosquito = setInterval(function() {
+			posicaoRandomica()}, criaMosquitoTempo)
+	</script>
+
+</body>
+</html>

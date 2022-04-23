@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>covid-game</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet"  href="estilo.css">
+	<script>
+		function iniciarJogo(){
+			var nivel = document.getElementById('nivel').value
+			if(nivel === ''){
+				alert('selecione um nivel pra iniciar o jogo')
+				return false
+			}
+			window.location.href = 'jogar.html?' + nivel
+		}
+
+		
+	</script>
+
+</head>
+
+<body>
+
+	<div class="container" >
+
+
+		<div class="row"  >
+			<div class="col">
+				<div class="d-flex justify-content-center">
+					<img  src="imagens/gamec.png" />
+				</div>
+			</div>		
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center">
+
+					<div class="mb-4">
+						<select  class="form-control" id="nivel" >
+							<option value="">--Selecione o nivel--</option>
+							<option value="facil">Fácil</option>								
+							<option value="intermediario">Intermediário</option>	
+							<option value="dificil">Difícil</option>	
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center">
+
+					<button type="button" class='btn btn-danger btn-lg' onclick = "iniciarJogo()">Iniciar o jogo</button>
+				</div>
+				
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>
